@@ -26,6 +26,21 @@ def calc_min_max_temperature(list):
     maxmin = [minimum, maximum]
     return maxmin
 
+def sort_temperature(list):
+    sortedList=sorted(list)
+    return sortedList
+
+
+def calc_median_temperature(list):
+    n = len(list)
+    if n%2 ==0:
+        median1=list[n//2]
+        median2=list[n//2-1]
+        median=(median1+median2)/2
+    else:
+        median=list[n//2]
+    return median
+
 
 
 def main():
@@ -36,6 +51,10 @@ def main():
     print("average value of all temperature readings: ", calc_average_temperature(num_list))
     calc_min_max_temperature(num_list)
     print('minimum and maximum temperature: ', calc_min_max_temperature(num_list))
+    sort_temperature(num_list)
+    print("the sorted list is: ", sort_temperature(num_list))
+    calc_median_temperature(sort_temperature(num_list))
+    print('the median temperature is: ',calc_median_temperature(sort_temperature(num_list)))
 
     #print(num_list)
     #print(str(type(num_list[0])))
